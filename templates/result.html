@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Student Result - {{ name }}</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 30px;
+            background-color: #f7f7f7;
+        }
+
+        .container {
+            max-width: 700px;
+            margin: auto;
+            background: white;
+            padding: 30px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.2);
+        }
+
+        .header {
+            display: flex;
+            align-items: center;
+            border-bottom: 2px solid #004080;
+            padding-bottom: 20px;
+        }
+
+        .logo {
+            width: 100px;
+            height: auto;
+            margin-right: 20px;
+        }
+
+        .title {
+            flex-grow: 1;
+            text-align: center;
+        }
+
+        .title h2 {
+            margin: 0;
+            font-size: 20px;
+            color: #004080;
+        }
+
+        .title h3 {
+            margin: 5px 0 0 0;
+            font-size: 16px;
+        }
+
+        .title h4 {
+            margin: 5px 0 0 0;
+            font-size: 14px;
+            font-style: italic;
+        }
+
+        .info {
+            margin-top: 20px;
+            font-size: 15px;
+            color: #333;
+        }
+
+        .grades-table {
+            margin-top: 30px;
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .grades-table th, .grades-table td {
+            border: 1px solid #aaa;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .grades-table th {
+            background-color: #cce5ff;
+            color: #003366;
+        }
+
+        .footer {
+            margin-top: 40px;
+            font-size: 14px;
+            text-align: right;
+        }
+
+        .download-btn {
+            display: block;
+            margin: 40px auto 0;
+            text-align: center;
+        }
+
+        .download-btn a {
+            display: inline-block;
+            background-color: #004080;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 5px;
+        }
+
+        .download-btn a:hover {
+            background-color: #0059b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <img src="/static/iiitkota_logo.png" alt="IIIT Kota Logo" class="logo">
+            <div class="title">
+                <h2>Indian Institute of Information Technology, Kota</h2>
+                <h3>Department of Electronics and Communication Engineering</h3>
+                <h4>4th Semester Marksheet – Batch 2023–2027</h4>
+            </div>
+        </div>
+
+        <div class="info"><b>Student ID:</b> {{ id }}</div>
+        <div class="info"><b>Student Name:</b> {{ name }}</div>
+        <div class="info"><b>Date of Issue:</b> {{ date_of_issue }}</div>
+
+        <table class="grades-table">
+            <thead>
+                <tr>
+                    <th>Subject Code</th>
+                    <th>Grade</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for subject, grade in grades.items() %}
+                <tr>
+                    <td>{{ subject }}</td>
+                    <td>{{ grade }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+        <div class="info"><b>SGPA:</b> {{ sgpa }}</div>
+
+        <div class="footer">
+            <b>Prepared by:</b> Saumya Chauhan
+        </div>
+
+        <div class="download-btn">
+            <a href="/download?id={{ id }}">Download PDF</a>
+        </div>
+    </div>
+</body>
+</html>
