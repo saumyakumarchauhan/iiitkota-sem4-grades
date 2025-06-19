@@ -44,6 +44,7 @@ project_folder/
 │   └── iiitkota_logo.png # Institute logo
 ├── templates/
 │   └── result.html       # Jinja2 result page
+    └── index.html 
 ```
 
 ---
