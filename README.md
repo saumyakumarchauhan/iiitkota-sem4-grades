@@ -1,65 +1,72 @@
-# IIIT Kota ECE 4th Semester Grades Portal
+# IIIT Kota - ECE Semester 4 Grade Portal
 
-This project is a FastAPI-based web application to generate and display semester results for students of the **Electronics and Communication Engineering (ECE)** department at IIIT Kota.
+This web application allows students from the **Electronics and Communication Engineering (ECE)** department at **IIIT Kota** (Batch 2023–2027) to view their Semester 4 grades and download their marksheet in PDF format.
 
-### 🔧 Features
-
-- View marksheet for each student by entering their ID
-- Automatically calculates SGPA based on grades and credit weights
-- Displays downloadable PDF marksheet using ReportLab
-- Deployed to Hugging Face Spaces
-- Case-insensitive support for student IDs (e.g., `2023KUEC2001` or `2023kuec2001`)
+🚀 Deployed on [Hugging Face Spaces](https://huggingface.co/spaces/Saumyakumar/iiitkota-sem4-ece-grades)
 
 ---
 
-### 🌐 Usage
+## 📚 Features
 
-Visit the deployed app:  
-📍 https://huggingface.co/spaces/Saumyakumar/iiitkota-sem4-ece-grades
-
-Search result using:  
-```
-https://huggingface.co/spaces/Saumyakumar/iiitkota-sem4-ece-grades/api?id=2023KUEC2001
-```
+- 🔍 Search by Student ID (case-insensitive)
+- 📊 View SGPA and subject-wise grades
+- 📄 Download auto-generated PDF marksheet
+- 🖼️ IIIT Kota logo and styled result layout
+- ⚡ Built with FastAPI, Jinja2, and ReportLab
 
 ---
 
-### 🗂️ Project Structure
+## 🧑‍💻 How to Use
+
+1. Visit the app on Hugging Face Spaces:  
+   https://Saumyakumar-iiitkota-sem4-ece-grades.hf.space
+
+2. Append your **Student ID** (e.g., `2023KUEC2001`) to the `/redirect` URL:  
+   https://Saumyakumar-iiitkota-sem4-ece-grades.hf.space/redirect?id=2023kuec2001
+
+   - ✅ Both `2023KUEC2001` and `2023kuec2001` are accepted.
+
+3. View your grade details on the result page.
+
+4. Click the **"Download PDF"** button to get your marksheet.
+
+---
+
+## 🗂️ Project Structure
 
 ```
 project_folder/
-├── app.py               # FastAPI backend
-├── templates/           # Jinja2 HTML templates
-├── static/              # CSS/Images like iiitkota_logo.png
-├── requirements.txt     # Python dependencies
-├── Dockerfile           # For Hugging Face deployment
-├── .gitignore           # Excludes sensitive files
-└── README.md            # This file
+├── app.py                # FastAPI backend
+├── grades.json           # Student grade data
+├── requirements.txt      # Python dependencies
+├── Dockerfile            # Hugging Face deployment config
+├── static/
+│   └── iiitkota_logo.png # Institute logo
+├── templates/
+│   └── result.html       # Jinja2 result page
 ```
 
 ---
 
-### 🛡️ Privacy Note
+## 🛠️ Tech Stack
 
-- `grades.json` is **excluded from GitHub** for student data privacy.
-- You can provide a `grades_template.json` for structure reference.
-
----
-
-### 🐳 Deployment (Hugging Face)
-
-1. Add this to `.huggingface.yaml` (optional):
-```yaml
-sdk: docker
-```
-2. Push your repo (without `grades.json`) to Hugging Face Space:
-```bash
-git push
-```
+- **FastAPI** – Web framework
+- **Jinja2** – Templating engine
+- **ReportLab** – PDF generation
+- **HTML/CSS** – Frontend styling
+- **Docker** – Containerized deployment
+- **Hugging Face Spaces** – Hosting platform
 
 ---
 
-### 👨‍💻 Developer
+## 👨‍💼 Prepared By
 
-Maintained by **Saumya Kumar**  
-Assistant Professor, IIIT Kota  
+**Saumya Kumar**  
+Undergraduate Student, IIIT Kota  
+B.Tech – Computer Science and Engineering
+
+---
+
+## 📜 License
+
+This project is for educational use only. Contact the maintainer for reuse or collaboration.
