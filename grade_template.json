@@ -1,0 +1,11 @@
+[
+  {
+    "id": "2023KUECXXXX",
+    "name": "Student Name",
+    "grades": {
+      "CST202": "AA",
+      "ECT202": "AB"
+      // ...
+    }
+  }
+]
